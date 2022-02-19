@@ -1,9 +1,11 @@
 package dev.tiagozc.dynamicconnectivity;
 
 /**
- * Union too expensive
+ * Keep connected objects in the same group. The value in the array represents the set or group that
+ * the object belongs to. The group identifier is the initial object identifier. When 2 objects
+ * connect, we update all the objects in the same group.
  *
- * <p>As more unions, more n access to the array, n²
+ * <p>Union too expensive, as more unions, more n access to the array, n²
  */
 public class QuickFindUF {
 
@@ -26,7 +28,7 @@ public class QuickFindUF {
     }
   }
 
-  /** quick find */
+  /** Quick find */
   public boolean connected(int p, int q) {
     return this.id[p] == this.id[q];
   }
